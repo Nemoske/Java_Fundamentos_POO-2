@@ -2,7 +2,10 @@ package Modulo_1;
 
 public class TesteGerente {
     public static void main(String[] args) {
+        Autenticavel referencia = new Gerente();
+
         Gerente g1 = new Gerente();
+
         g1.setNome("Marcos");
         g1.setCpf("231313123213");
         g1.setSalario(1000.00);

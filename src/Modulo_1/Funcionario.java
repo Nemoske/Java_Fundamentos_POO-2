@@ -1,15 +1,14 @@
 package Modulo_1;
 
-public class Funcionario {
+public abstract class Funcionario {
     //atributos
     private String nome;
     private String cpf;
     private double salario;
 
-    public double getBonificacao(){
+    // Método abstrato, vazio
+    public abstract double getBonificacao();
 
-        return this.salario * 0.1;
-    }// FUNCIONARIO
 
     public String getNome(){
         return nome;
