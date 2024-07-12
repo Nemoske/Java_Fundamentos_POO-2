@@ -17,5 +17,10 @@ public class TesteDeReferencias {
         controle.registra(g);
         System.out.println(controle.getSoma());
 
+
+        Cliente cliente = new Cliente();
+        cliente.autentica(1234);
+
+
     }
 }

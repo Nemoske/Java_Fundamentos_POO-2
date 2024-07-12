@@ -1,27 +1,21 @@
 package Modulo_1;
 
 public class Administrador extends Funcionario implements Autenticavel{
-    // herdando atributos e metodos da classe funcionario e assinando contrato com a interface Autenticavel
 
-    //Atributo da interface
-    private int senha;
+    private AutenticacaoUtil autenticador;
 
-    //Método da interface Autenticavel
+    public Administrador(){
+        this.autenticador = new AutenticacaoUtil();
+    }
 
     @Override
     public void setSenha(int senha){
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
     }
-    //Método da interface Autenticavel
 
     @Override
     public boolean autentica(int senha){
-        if(this.senha == senha){
-            return true;
-        }
-        else{
-            return false;
-        }
+     return this.autenticador.autentica(senha);
     }
     //Método da herança da classe funcionário
 

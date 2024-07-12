@@ -4,7 +4,11 @@ public class Gerente extends Funcionario implements Autenticavel {
 // herdando atributos e metodos da classe funcionario e assinando contrato com a interface Autenticavel
 
     //Atributo da interface
-    private  int senha;
+    private  AutenticacaoUtil autenticador;
+
+    public Gerente(){
+        this.autenticador = new AutenticacaoUtil();
+    }
 
         @Override
        public double getBonificacao(){
@@ -14,17 +18,12 @@ public class Gerente extends Funcionario implements Autenticavel {
 
     //Métodos da interface Autenticavel
     @Override
-    public void setSenha(int senha) {
-        this.senha = senha;
+    public void setSenha(int senha){
+        this.autenticador.setSenha(senha);
     }
 
     @Override
-    public boolean autentica(int senha) {
-            if(this.senha == senha){
-                return true;
-            }
-        else{
-            return false;
-        }
+    public boolean autentica(int senha){
+        return this.autenticador.autentica(senha);
     }
 }

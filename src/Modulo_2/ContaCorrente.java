@@ -1,6 +1,6 @@
 package Modulo_2;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel{
 
     //Construtor
     public ContaCorrente(int agencia, int numero) {
@@ -18,5 +18,10 @@ public class ContaCorrente extends Conta {
     public boolean saca(double valor) {
         double valorASacar = valor + 0.2;
         return super.saca(valorASacar);
+    }
+
+    @Override
+    public double getValorImposto() {
+        return super.saldo * 0.01;
     }
 }
